@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Student Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Basic Reset and Font */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align to the left */
+        }
+
+        .contact-title {
+            background-color: #222;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f0f0f0;
+            padding: 40px;
+            border-radius: 5px;
+            max-width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form {
+            flex: 1;
+            max-width: 60%; /* Increased form width */
+        }
+
+        .contact-info {
+            flex: 1;
+            max-width: 40%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        .contact-btn {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #4CAF50;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styles */
+        .footer {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: #3366cc;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-section">
+        <div class="contact-title">Contact Me</div>
+        <div class="form-container">
+            <div class="contact-form">
+                <form id="contactForm" action="#" method="POST">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+                    <button class="contact-btn" type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> 3-2-59, Rajula Street, Cheruvu Center, Vidyadharapuram, Vijayawada, Krishna, Andhra Pradesh-520012</p>
+                <br>
+                <p><i class="fas fa-phone"></i> Ph. NO - 9866199842</p>
+                <br>
+                <p><i class="fas fa-envelope"></i> kkrishnabhavani2005@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="mailto:kkrishnabhavani2005@gmail.com"><i class="fas fa-envelope fa-3x"></i></a>
+        <a href="https://www.linkedin.com/in/kundiri-krishna-bhavani-02104534b/" target="_blank"><i class="fab fa-linkedin fa-3x"></i></a>
+        <a href="https://github.com/KrishnabhavaniK" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form from actually submitting
+
+            const formData = new FormData(this); // Get form data
+
+            fetch('/contact', { // Send data to the Flask route
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(message => {
+                    if (message === "Message sent successfully!") {
+                        alert(message);
+                        this.reset();
+                    } else {
+                        alert(message);
+                    }
+                })
+                .catch(error => {
+                    alert("An error occurred. Please try again later.");
+                    console.error("Error:", error);
+                });
+        });
+    </script>
+</body>
+
+</html>

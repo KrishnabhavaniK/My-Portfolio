@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projects Performed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main Wrapper */
+        .main-wrapper {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 40px;
+        }
+
+        /* Project Container with Image & Description */
+        .project-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            gap: 30px;
+        }
+
+        /* Project Image */
+        .project-image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Button Below Image */
+        .project-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #222;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .project-button:hover {
+            background-color: #ffcc00;
+            color: #222;
+        }
+
+        /* Project Content */
+        .project-content {
+            width: 60%;
+        }
+
+        /* Project Title */
+        .project-title {
+            background-color: #222;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Project Description */
+        .project-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .project-image-container {
+                width: 80%;
+            }
+
+            .project-content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('skills') }}">Skills</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="projects-section">
+        <div class="project-title">Promte Engineering: Travel_Amaze</div>
+        <div class="project-container">
+            <div class="project-image-container">
+                <img src="/static/img/travel.jpeg" alt="Project Image" class="project-image">
+                <a href="https://hafiza22.github.io/Travel_Amaze/" class="project-button">View More</a>
+            </div>
+            <div class="project-content">
+                <ul class="project-description">
+                    <li>Prompt engineering is the strategic crafting of text prompts to effectively communicate with AI
+                        models, guiding their responses to achieve specific goals, clarity, and desired outcomes.</li>
+                    <li>The project involved developing a chatbot prototype using Rasa to address common inquiries and
+                        provide personalized recommendations to tourists visiting a specific region.</li>
+                    <li>Project explores the application of the Rasa framework in enhancing visitor engagement and
+                        customer
+                        service within the tourism industry.</li>
+                    <li>This project is built by using Rasa framework, Wikimedia and some other API keys, and Flowbite
+                        for
+                        user interface.</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="project-title">Movie Ticket Booking System</div>
+        <div class="project-container">
+            <div class="project-image-container">
+                <img src="/static/img/movie.jpeg" alt="Project Image" class="project-image">
+                <a href="https://hafiza22.github.io/movie/" class="project-button">View More</a>
+            </div>
+            <div class="project-content">
+                <ul class="project-description">
+                    <li>T
+                        The Movie Ticket Booking System allows users to search for movies using a search bar and filter them
+                        into categories such as Tollywood, Bollywood, Hollywood, and Cartoon</li>
+                    <li>Each movie listing provides a "Trailer" button that redirects users to the movie's trailer on YouTube and
+                        a "Book Now" button that takes them to the booking page..</li>
+                    <li>The booking page allows users to select available showtimes and choose their preferred seats from a visual seating layout.</li>
+                    <li>An automatic discount of 10% is applied when a user books more than three seats in a single transaction.</li>
+                    <li>After seat selection, users proceed to the payment process to finalize their booking, ensuring a smooth and efficient ticket reservation experience.</li>    
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>

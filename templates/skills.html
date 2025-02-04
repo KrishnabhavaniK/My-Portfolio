@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tools and Skills</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #333;
+            color: white;
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+        .navbar ul li {
+            margin-left: 20px;
+        }
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+        .main-wrapper {
+            height: calc(100vh - 80px); /* Adjusting for navbar height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skills-section {
+            padding: 50px;
+        }
+
+        .skills-title {
+            background-color: #222;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .skills-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            padding: 40px;
+            border-radius: 5px;
+        }
+
+        .welcome-text {
+            font-size: 25px;
+            line-height: 1.6;
+            width: 25%;
+            color: #333;
+            padding-right: 20px;
+        }
+
+        .skills-list {
+            width: 75%;
+        }
+
+        .skill {
+            margin-bottom: 20px;
+        }
+
+        .skill p {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #222;
+            border-radius: 5px;
+        }
+
+        /* Progress levels */
+        .tableau .progress { width: 85%; }
+        .ms-office .progress { width: 90%; }
+        .database .progress { width: 80%; }
+        .c .progress { width: 75%; }
+        .java .progress { width: 80%; }
+        .python .progress { width: 70%; }
+        .html .progress { width: 90%; }
+        .css .progress { width: 80%; }
+        .js .progress { width: 70%; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('skills') }}">Skills</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+</nav>
+
+    <section class="skills-section">
+        <div class="skills-title">Tools and skills</div>
+        <div class="skills-container">
+            <div class="welcome-text">
+                <p>Welcome to my portfolio! Here are the list of the skills I possess, 
+                   along with my proficiency in each of them. Feel free to browse through my 
+                   abilities, and let's connect to create something amazing!
+                </p>
+            </div>
+            <div class="skills-list">
+                <div class="skill tableau">
+                    <p>Tableau</p>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+                <div class="skill ms-office">
+                    <p>Ms Office</p>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+                <div class="skill database">
+                    <p>Database Management</p>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+                <div class="skill c">
+                    <p>C</p>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+                <div class="skill java">
+                    <p>Java</p>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+                <div class="skill python">
+                    <p>Python</p>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+                <div class="skill html">
+                  <p>HTML</p>
+                  <div class="progress-bar"><div class="progress"></div></div>
+              </div>
+              <div class="skill css">
+                <p>CSS</p>
+                <div class="progress-bar"><div class="progress"></div></div>
+              </div>
+              <div class="skill js">
+                <p>Java Script</p>
+                <div class="progress-bar"><div class="progress"></div></div>
+              </div>
+                
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

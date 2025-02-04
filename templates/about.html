@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Me - Student Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: auto;
+            min-height: calc(100vh - 80px);
+            padding: 50px;
+        }
+
+        .about-title {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-content {
+            background-color: #f0f0f0;
+            padding: 50px;
+            max-width: 1000px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('skills') }}">Skills</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about-section">
+        <div class="about-title">About Me</div>
+        <div class="about-content">
+            <p class="content-text">
+                My full name is Kundiri Krishna Bhvani. I'm from Vijayawada, Andhra Pradesh.
+                I'm currently pursuing my undergraduate degree at KBN College. I completed my intermediate studies at
+                Amaravathi Junior College and SSC from GNR Mc High School.
+                <br><br>
+                <strong>Strengths: </strong>My strengths are attentiveness, collaboration, creativity, and being detail-oriented.
+                <br><br>
+                <strong>Weaknesses: </strong>My weaknesses, I tend to be highly competitive, too honest, and find it
+                difficult to let go of tasks until they are finished.
+                <br><br>
+                <strong>Short-term goal: </strong>My short-term goal is to secure a job to gain experience and enhance my skills.
+                <br><br>
+                <strong>Long-term goal: </strong>My long-term goal is to take on greater responsibilities within the
+                                                organization.With my skills and talent, I aim to achieve a higher position within the company.
+            </p>
+        </div>
+    </section>
+
+</body>
+
+</html>

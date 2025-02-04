@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .main-wrapper {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: black;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            color: white;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .content-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background-color: white;
+            /* Ensure content area has white background */
+            position: relative;
+            /* For image positioning */
+        }
+
+        .info {
+            flex: 1;
+            max-width: 50%;
+            margin-left: 50px;
+        }
+
+        .info h1 {
+            font-size: 40px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .info h3 {
+            font-size: 25px;
+            margin-top: 10px;
+        }
+
+        .image {
+            flex: 1;
+            text-align: right;
+            /* Align image to the right */
+            position: relative;
+            /* For containing the image */
+            margin-right: 70px;
+        }
+
+        .image img {
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            max-height: 500px;
+            /* Set a maximum height */
+        }
+
+        .download-btn {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .download-btn:hover {
+            background-color: black;
+            transform: scale(1.05);
+        }
+
+        .info h1 {
+            font-size: 40px;
+            color: #333;
+            font-weight: bold;
+            overflow: hidden;
+            /* For typewriter effect */
+            white-space: nowrap;
+            /* For typewriter effect */
+            border-right: 2px solid;
+            /* For typewriter effect */
+            animation: typing 3.5s steps(40, end) infinite, blink-caret .75s step-end infinite;
+            /* Typewriter effect */
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="header">
+            <nav class="navbar">
+                <div class="logo">Portfolio</div>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('skills') }}">Skills</a></li>
+                    <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content-area">
+            <div class="info">
+                <h3>Hi! I'm Kundiri Krishna Bhavani</h3><br>
+                <h1>THIS IS MY PORTFOLIO.</h1>
+                <a href="/static/img/FinalResume.pdf">
+                    <button class="download-btn">Download Resume</button>
+                </a>
+            </div>
+            <div class="image">
+                <img src="/static/img/img.jpg" alt="Photo">
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
